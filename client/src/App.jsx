@@ -47,7 +47,7 @@ function App() {
 
           <footer className="mt-3 sm:mt-4 text-center text-xs sm:text-sm max-w-7xl mx-auto">
             <p>
-              Created by [Your Name] | Feedback Collector ©{" "}
+              Created by Ajay Saraswat | Feedback Collector ©{" "}
               {new Date().getFullYear()}
             </p>
           </footer>
