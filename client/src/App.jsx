@@ -21,30 +21,30 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div
-        className={`min-h-screen w-full transition-colors duration-300 ${
-          isDarkMode
-            ? "dark bg-gray-900 text-white"
-            : "bg-gray-50 text-gray-900"
+        className={`min-h-screen w-screen overflow-x-hidden transition-colors duration-300 ${
+          isDarkMode ? "dark bg-gray-900 text-white" : "bg-gray-50 text-black"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 py-8 h-full">
-          <header className="flex justify-between items-center mb-8">
-            <h1 className="text-3xl font-bold">Feedback Collector</h1>
+        <div className="w-full h-full px-3 sm:px-6 lg:px-8 py-3 sm:py-6 lg:py-8">
+          <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6 max-w-7xl mx-auto">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">
+              Feedback Collector
+            </h1>
             <ThemeToggle
               isDarkMode={isDarkMode}
               setIsDarkMode={setIsDarkMode}
             />
           </header>
 
-          <main className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-[calc(100vh-12rem)]">
+          <main className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 h-[calc(100vh-8rem)] sm:h-[calc(100vh-10rem)] max-w-7xl mx-auto">
             <AnimatePresence mode="wait">
               <motion.div
                 key="form"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.3 }}
-                className="h-full"
+                className="h-[50vh] lg:h-full"
               >
                 <FeedbackForm />
               </motion.div>
@@ -53,18 +53,18 @@ function App() {
             <AnimatePresence mode="wait">
               <motion.div
                 key="list"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="h-full overflow-y-auto"
+                className="h-[50vh] lg:h-full overflow-y-auto"
               >
                 <FeedbackList />
               </motion.div>
             </AnimatePresence>
           </main>
 
-          <footer className="mt-4 text-center text-sm">
+          <footer className="mt-3 sm:mt-4 text-center text-xs sm:text-sm max-w-7xl mx-auto">
             <p>
               Created by [Your Name] | Feedback Collector ©{" "}
               {new Date().getFullYear()}
