@@ -36,32 +36,13 @@ function App() {
             />
           </header>
 
-          <main className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 h-[calc(100vh-8rem)] sm:h-[calc(100vh-10rem)] max-w-7xl mx-auto">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key="form"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ duration: 0.3 }}
-                className="h-[50vh] lg:h-full"
-              >
-                <FeedbackForm />
-              </motion.div>
-            </AnimatePresence>
-
-            <AnimatePresence mode="wait">
-              <motion.div
-                key="list"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
-                className="h-[50vh] lg:h-full overflow-y-auto"
-              >
-                <FeedbackList />
-              </motion.div>
-            </AnimatePresence>
+          <main className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 h-[calc(100vh-8rem)] sm:h-[calc(100vh-10rem)] max-w-7xl mx-auto">
+            <div className="h-full">
+              <FeedbackForm />
+            </div>
+            <div className="h-full overflow-y-auto">
+              <FeedbackList />
+            </div>
           </main>
 
           <footer className="mt-3 sm:mt-4 text-center text-xs sm:text-sm max-w-7xl mx-auto">
