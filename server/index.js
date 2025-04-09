@@ -15,6 +15,9 @@ app.use(morgan("dev"));
 
 // Routes
 app.use("/api/feedbacks", feedbackRoutes);
+app.use("/", (req, res) => {
+  return res.json({ message: "api is running..." });
+});
 
 // MongoDB Connection
 mongoose
